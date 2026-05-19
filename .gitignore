@@ -1,0 +1,6 @@
+data/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+test-cookie.txt

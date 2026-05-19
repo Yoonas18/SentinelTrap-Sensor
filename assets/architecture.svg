@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420" role="img" aria-labelledby="title desc">
+  <title id="title">SentinelTrap architecture</title>
+  <desc id="desc">Traffic flows from scanners to fake services, then into logs and the protected dashboard.</desc>
+  <defs>
+    <linearGradient id="node" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#132238"/>
+      <stop offset="1" stop-color="#0f1b2d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 3L0 6Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1080" height="420" rx="20" fill="#07111f"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="42" y="58" fill="#e5edf7" font-size="28" font-weight="800">How SentinelTrap Handles Traffic</text>
+    <text x="42" y="86" fill="#93a4ba" font-size="15">Fake services capture interaction data and write SIEM-ready telemetry without executing payloads.</text>
+    <g transform="translate(50 150)">
+      <rect width="190" height="130" rx="14" fill="url(#node)" stroke="#26364d"/>
+      <text x="26" y="44" fill="#e5edf7" font-size="18" font-weight="800">Scanners</text>
+      <text x="26" y="74" fill="#93a4ba" font-size="14">nmap</text>
+      <text x="26" y="96" fill="#93a4ba" font-size="14">browser probes</text>
+      <text x="26" y="118" fill="#93a4ba" font-size="14">login attempts</text>
+    </g>
+    <path d="M252 215H350" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(370 118)">
+      <rect width="240" height="194" rx="14" fill="url(#node)" stroke="#26364d"/>
+      <text x="28" y="44" fill="#e5edf7" font-size="18" font-weight="800">Fake Services</text>
+      <rect x="28" y="66" width="78" height="30" rx="15" fill="#38bdf8" fill-opacity=".14"/>
+      <text x="51" y="86" fill="#bae6fd" font-size="13" font-weight="700">HTTP</text>
+      <rect x="118" y="66" width="70" height="30" rx="15" fill="#a78bfa" fill-opacity=".16"/>
+      <text x="141" y="86" fill="#ddd6fe" font-size="13" font-weight="700">SSH</text>
+      <rect x="28" y="110" width="70" height="30" rx="15" fill="#34d399" fill-opacity=".14"/>
+      <text x="53" y="130" fill="#bbf7d0" font-size="13" font-weight="700">FTP</text>
+      <rect x="118" y="110" width="96" height="30" rx="15" fill="#fbbf24" fill-opacity=".14"/>
+      <text x="143" y="130" fill="#fde68a" font-size="13" font-weight="700">TELNET</text>
+      <text x="28" y="166" fill="#93a4ba" font-size="14">No shell execution</text>
+    </g>
+    <path d="M622 215H720" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(740 110)">
+      <rect width="290" height="210" rx="14" fill="url(#node)" stroke="#26364d"/>
+      <text x="28" y="44" fill="#e5edf7" font-size="18" font-weight="800">Telemetry Outputs</text>
+      <path d="M32 76H256" stroke="#26364d"/>
+      <text x="32" y="108" fill="#e5edf7" font-size="15" font-weight="700">data/events.jsonl</text>
+      <text x="32" y="130" fill="#93a4ba" font-size="13">Dashboard-friendly event stream</text>
+      <text x="32" y="166" fill="#e5edf7" font-size="15" font-weight="700">data/events-ecs.jsonl</text>
+      <text x="32" y="188" fill="#93a4ba" font-size="13">SIEM/EDR-ready ECS-style records</text>
+    </g>
+    <path d="M485 320C485 370 760 370 884 330" fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="6 8" marker-end="url(#arrow)"/>
+    <text x="514" y="386" fill="#93a4ba" font-size="14">Protected dashboard reads local telemetry from port 5000</text>
+  </g>
+</svg>

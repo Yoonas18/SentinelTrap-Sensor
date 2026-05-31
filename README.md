@@ -197,16 +197,3 @@ Public IP lookups use `ipwho.is` and are cached in `data/geo-cache.json`.
 - The fake services do not execute submitted payloads, but the host is still
   reachable on the network.
 
-## Repository About
-
-Suggested GitHub repository description:
-
-```text
-Compact network deception sensor with fake HTTP/SSH/FTP/Telnet services, protected dashboard, source map, and SIEM-ready JSONL telemetry.
-```
-
-Suggested topics:
-
-```text
-honeypot, deception, cybersecurity, siem, ecs, threat-intelligence, network-security, python, blue-team
-```
